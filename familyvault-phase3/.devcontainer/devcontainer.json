@@ -1,0 +1,64 @@
+{
+  "name": "FamilyVault Dev Environment",
+
+  // Base image: Java 17 + common dev tools
+  "image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
+
+  "features": {
+    // Node 20 for the React Native / Expo mobile app
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    // Docker-in-Docker so you can run docker compose inside the Codespace
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+
+  // Forward these ports so you can open them in your browser
+  "forwardPorts": [
+    8080,   // Spring Boot API  → http://localhost:8080/swagger-ui.html
+    5432,   // PostgreSQL
+    6379,   // Redis
+    8025,   // (future) MailHog email preview
+    19000,  // Expo dev server
+    19001,  // Expo Metro bundler
+    19002   // Expo DevTools
+  ],
+
+  "portsAttributes": {
+    "8080": { "label": "Spring Boot API", "onAutoForward": "openBrowser" },
+    "19000": { "label": "Expo", "onAutoForward": "notify" }
+  },
+
+  // Runs once after the container is created
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  // VS Code extensions pre-installed in the Codespace
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",          // Java language support
+        "vmware.vscode-spring-boot",          // Spring Boot dashboard
+        "vscjava.vscode-spring-initializr",   // Spring Initializr
+        "Pivotal.vscode-spring-boot",         // Spring Boot tools
+        "ms-azuretools.vscode-docker",        // Docker explorer
+        "dbaeumer.vscode-eslint",             // ESLint for TypeScript
+        "esbenp.prettier-vscode",             // Prettier formatter
+        "bradlc.vscode-tailwindcss",          // Tailwind (useful for web later)
+        "GitHub.copilot"                      // Copilot (if you have it)
+      ],
+      "settings": {
+        "java.configuration.runtimes": [
+          { "name": "JavaSE-17", "default": true }
+        ],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[java]": {
+          "editor.defaultFormatter": "redhat.java"
+        }
+      }
+    }
+  }
+}
