@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/familyvault.iml" filepath="$PROJECT_DIR$/.idea/familyvault.iml" />
+      <module fileurl="file://$PROJECT_DIR$/familyvault/.idea/familyvault.iml" filepath="$PROJECT_DIR$/familyvault/.idea/familyvault.iml" />
     </modules>
   </component>
 </project>
