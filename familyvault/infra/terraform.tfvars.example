@@ -1,0 +1,36 @@
+# terraform.tfvars.example
+# ─────────────────────────────────────────────────────────────────────────────
+# Copy this file to terraform.tfvars and fill in your values.
+# NEVER commit terraform.tfvars — it contains secrets.
+# It's already in .gitignore.
+#
+# Sensitive variables (db_password, jwt_secret) should be passed via
+# environment variables instead of this file:
+#
+#   export TF_VAR_db_password="your-strong-password-here"
+#   export TF_VAR_jwt_secret="your-base64-jwt-secret-here"
+#   terraform apply
+# ─────────────────────────────────────────────────────────────────────────────
+
+aws_region  = "us-east-1"
+environment = "prod"
+project     = "familyvault"
+
+# Networking
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.10.0/24", "10.0.11.0/24"]
+
+# RDS
+db_instance_class    = "db.t3.micro"   # free tier eligible
+db_name              = "familyvault"
+db_username          = "fvadmin"
+db_multi_az          = true
+db_allocated_storage = 20
+
+# ElastiCache
+redis_node_type = "cache.t3.micro"   # free tier eligible
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DO NOT put db_password or jwt_secret here — use TF_VAR_ env vars instead
+# ─────────────────────────────────────────────────────────────────────────────

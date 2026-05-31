@@ -1,0 +1,21 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# macOS
+.DS_Store
+
+# NEVER commit real uploads or secrets
+uploads/
+.env
+*.env.local
+
+# Logs
+logs/
+*.log
+spring-shell.log
