@@ -4,7 +4,7 @@ WORKDIR /app
 COPY pom.xml .
 # Download dependencies first (layer-cached unless pom.xml changes)
 RUN mvn dependency:go-offline -q
-COPY src ./src
+COPY ../src ./src
 RUN mvn package -DskipTests -q
 
 # ── Stage 2: Runtime ─────────────────────────────────────────────────────────

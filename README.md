@@ -1,12 +1,12 @@
 # FamilyVault
 
-A secure, private cloud storage platform for families — built as a portfolio project to demonstrate enterprise-grade full-stack development skills.
+A secure, private cloud storage platform for families — built to demonstrate enterprise-grade full-stack development skills.
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology | Why it matters to employers |
+| Layer | Technology | Why it matters |
 |---|---|---|
 | Backend | Java 17 · Spring Boot 3.2 | Industry standard for enterprise Java |
 | Security | Spring Security 6 · JWT · BCrypt · RBAC | Every company needs this |

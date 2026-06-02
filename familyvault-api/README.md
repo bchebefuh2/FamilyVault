@@ -1,8 +1,7 @@
-# 🔐 FamilyVault API
+#  FamilyVault API
 
 A secure, private cloud storage platform for families. Built with **Java 17 / Spring Boot 3**, **Spring Security 6**, **JWT auth**, **PostgreSQL**, and **Redis** — containerized with Docker and ready to deploy to AWS.
-
-> **Portfolio project** — demonstrates enterprise-grade backend skills used in professional Java development.
+           
 
 ---
 
