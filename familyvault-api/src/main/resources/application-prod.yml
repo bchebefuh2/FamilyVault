@@ -26,16 +26,16 @@ spring:
       ddl-auto: validate
 
 # ── AWS ───────────────────────────────────────────────────────────────────────
-aws:
-  region: us-east-1
-  s3:
-    bucket-name: ${S3_BUCKET}
-  kms:
-    key-id: ${KMS_KEY_ID}
-  cloudfront:
-    domain: ${CF_DOMAIN}
-  secretsmanager:
-    secret-arn: ${SECRETS_MANAGER_ARN}
+#aws:
+#  region: us-east-1
+#  s3:
+#    bucket-name: ${S3_BUCKET}
+#  kms:
+#    key-id: ${KMS_KEY_ID}
+#  cloudfront:
+#    domain: ${CF_DOMAIN}
+#  secretsmanager:
+#    secret-arn: ${SECRETS_MANAGER_ARN}
 
 # ── JWT ───────────────────────────────────────────────────────────────────────
 jwt:

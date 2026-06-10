@@ -2,8 +2,8 @@ name: CD — Build & Push to AWS ECR
 
 # Only deploy when code lands on main (i.e. a PR is merged)
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+
 
 env:
   AWS_REGION: us-east-1
